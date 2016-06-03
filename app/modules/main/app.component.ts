@@ -1,14 +1,14 @@
-import {Component} from '@angular/core';
-import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-deprecated';
-import {SubContentComponent} from '../subcontent/sub-content.component';
+import {Component} from "@angular/core";
+import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, Router} from "@angular/router-deprecated";
+import {SubContentComponent} from "../subcontent/sub-content.component";
 
 @Component({
-    selector: 'coupon-app',
+    selector: "coupon-app",
     template: `
         <h2>Application Title</h2>
         <p>some random text here</p>
         <nav>
-            <a [routerLink]="['SubContent']">Sub Content</a>
+            <a [routerLink]='["SubContent"]'>Sub Content</a>
         </nav>
         <router-outlet></router-outlet>
     `,
@@ -18,8 +18,8 @@ import {SubContentComponent} from '../subcontent/sub-content.component';
 
 @RouteConfig([
     {
-        path: '/subcontent',
-        name: 'SubContent',
+        path: "/subcontent",
+        name: "SubContent",
         component: SubContentComponent
     }
 ])
@@ -27,6 +27,6 @@ import {SubContentComponent} from '../subcontent/sub-content.component';
 export /**
  * AppComponent
  */
-class AppComponent {
-    
+    class AppComponent {
+
 }

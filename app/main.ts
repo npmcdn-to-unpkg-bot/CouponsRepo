@@ -1,18 +1,18 @@
-declare var require:(moduleId:string)=>any;
-declare var module:any;
-declare var global:any;
+declare let require: (moduleId: string) => any;
+declare let module: any;
+declare let global: any;
 
-var Zone = require("zone.js");
+let Zone = require("zone.js");
 require("reflect-metadata");
 
 
-import {bootstrap} from '@angular/platform-browser-dynamic';
-import {AppComponent} from './modules/main/app.component';
+import {bootstrap} from "@angular/platform-browser-dynamic";
+import {AppComponent} from "./modules/main/app.component";
 
 
 bootstrap(AppComponent).then(
-    ()=>console.info('app bootstrapped'),
-    (error) =>{
-        console.info('Not bootstrap, Error details:' + error);
+    () => console.info("app bootstrapped"),
+    (error) => {
+        console.info("Not bootstrap, Error details:" + error);
     }
 );

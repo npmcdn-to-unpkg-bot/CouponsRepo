@@ -40,6 +40,11 @@
     "vinyl-source-stream":"latest",
     "gulp-uglify":"latest",
     "fs-extra":"latest",
-    "browser-sync": "latest"
+    "browser-sync": "latest",
+    "vinyl-buffer": "latest",
+    "gulp-tslint":"latest",
+    "tslint":"latest",
+    "gulp-htmlmin":"latest",
+    "mocha":"latest"
   }
 }
