@@ -39,21 +39,21 @@ gulp.task('tsLint', function () {
 });
 
 gulp.task('compile-js', ['tsLint'], function () {
-    var bundler = browserify({ basedir: config.app.path })
+    var bundler = browserify({ basedir: config.app.path, debug:true })
         .add(config.app.path + '/' + config.app.main)
         .plugin(tsify);
 
     return bundler.bundle()
         .pipe(source(config.app.result))
         .pipe(buffer())
-        .pipe(uglify())
+        //.pipe(uglify())
         .pipe(gulp.dest(config.publicPath));
 });
 
-gulp.task('copy-html',['copy-index'], function(){
-   return gulp.src([config.app.path + "/**/*.html", config.app.path + "/**/*.htm", config.app.path + "/../index.html"])
-    .pipe(htmlmin({collapseWhitespace: true}))
-    .pipe(gulp.dest(config.publicPath))
+gulp.task('copy-html', ['copy-index'], function () {
+    return gulp.src([config.app.path + "/**/*.html", config.app.path + "/**/*.htm", config.app.path + "/../index.html"])
+        .pipe(htmlmin({ collapseWhitespace: true }))
+        .pipe(gulp.dest(config.publicPath))
 })
 
 gulp.task('copy-resources', ['compile-js', 'copy-html'], function () {
@@ -63,8 +63,8 @@ gulp.task('copy-resources', ['compile-js', 'copy-html'], function () {
 
 gulp.task('copy-index', function () {
     return gulp.src([config.app.path + "/../index.html"])
-    .pipe(htmlmin({collapseWhitespace: true}))
-    .pipe(gulp.dest(config.publicPath))
+        .pipe(htmlmin({ collapseWhitespace: true }))
+        .pipe(gulp.dest(config.publicPath))
 })
 
 

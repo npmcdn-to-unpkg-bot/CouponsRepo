@@ -3,7 +3,7 @@ import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, Router} from "@angular
 import {SubContentComponent} from "../subcontent/sub-content.component";
 
 @Component({
-    selector: "coupon-app",
+    selector: "body",
     template: `
         <h2>Application Title</h2>
         <p>some random text here</p>
@@ -18,7 +18,7 @@ import {SubContentComponent} from "../subcontent/sub-content.component";
 
 @RouteConfig([
     {
-        path: "/subcontent",
+        path: "/subcontent/...",
         name: "SubContent",
         component: SubContentComponent
     }
